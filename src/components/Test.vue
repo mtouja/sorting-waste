@@ -22,9 +22,14 @@
               <div class="colonne" v-for="element in organique" :key="element.id">
                 <button>{{element.name}}</button>
               </div>
-                <img class="waste" src='https://image.flaticon.com/icons/svg/1061/1061010.svg'/>
             </draggable>
-          </template>  
+          </template>
+            <template>
+              <b-btn class="btn btn-warning chiffres" v-b-modal.modal1>Le saviez-vous ?</b-btn>
+                <b-modal class="compost" id="modal1" title="20 Millions">
+                  <p>C'est le nombre de tonnes d'émission de CO2 évités grâce au recyclage.</p>
+                </b-modal>
+            </template>
         </b-col>
         <b-col class="c" cols="4" offset="1">
           <template>
@@ -33,9 +38,14 @@
               <div class="colonne" v-for="element in plastique" :key="element.id">
                 <button>{{element.name}}</button>
               </div>
-                <img class="waste" src='https://image.flaticon.com/icons/svg/1265/1265024.svg'/>
             </draggable>
           </template>
+            <div>
+              <b-btn class="btn btn-warning chiffres" v-b-modal.modal1>Le saviez-vous ?</b-btn>
+                <b-modal class="plastique" title="1 Million">
+                  <p>C'est le nombre de bouteilles en plastique vendues par minute. Soit 480 milliards pour l'année 2016.</p>
+                </b-modal>
+            </div>
         </b-col>
       </b-row>
       <b-row>
@@ -46,9 +56,14 @@
               <div class="colonne" v-for="element in carton" :key="element.id">
                 <button>{{element.name}}</button>
               </div>
-                <img class="waste" src='https://image.flaticon.com/icons/svg/416/416186.svg'/>
             </draggable>
           </template>
+          <div>
+              <b-btn class="btn btn-warning chiffres" v-b-modal.modal1>Le saviez-vous ?</b-btn>
+                <b-modal class="compost" id="cartons" title="test">
+                  <p>bleble</p>
+                </b-modal>
+            </div>
         </b-col>
         <b-col class="c" cols="4" offset="1">
           <template>
@@ -57,9 +72,14 @@
               <div class="colonne" v-for="element in ordinaire" :key="element.id">
                 <button>{{element.name}}</button>
               </div>
-                <img class="waste" src='https://image.flaticon.com/icons/svg/1341/1341939.svg'/>
             </draggable>
           </template>
+          <div>
+              <b-btn class="btn btn-warning chiffres" v-b-modal.modal1>Le saviez-vous ?</b-btn>
+                <b-modal class="compost" id="compost" title="20 Millions">
+                  <p>ordinaire.</p>
+                </b-modal>
+            </div>
         </b-col>
       </b-row>
     </b-col>
@@ -81,17 +101,18 @@ export default Vue.extend({
   data: function() {
     return{
       myArray: [
-        {id: 1, name: 'couches'},
-        {id: 2, name: 'pot de confiture'},
+        {id: 1, name: 'couches', info:'i'},
+        {id: 2, name: 'epluchures'},
         {id: 3, name: "coquilles d'oeufs"},
         {id: 4, name: 'boîtes de conserve'},
         {id: 5, name: 'marc de café'},
         {id: 6, name: "bouteille de lait"},
         {id: 7, name: "boîtes d'oeufs"},
-        {id: 8, name: 'bidon de lessive'},
+        {id: 8, name: 'bidon de lessive',info:'i'},
         {id: 9, name: "coquilles pot de yaourt"},
-        {id: 10, name: 'magazine'},
-        {id: 11, name: 'papier gras'}
+        {id: 10, name: 'magazine', info:'i'},
+        {id: 11, name: 'papier gras'},
+        {id: 12, name: 'journaux'}
       ],
       organique: [
         ],
@@ -114,6 +135,15 @@ export default Vue.extend({
     width: 200px;
     margin-bottom: 30px;
   }
+  .chiffres {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Cairo';
+  }
+  .modal-header {
+    text-align: center !important;
+  }
   .waste {
     width: 80px;
     margin-top: 20px;
@@ -124,18 +154,38 @@ export default Vue.extend({
   #compost{
     background-color: #00b896;
     height: 250px;
+    background-image: url('https://image.flaticon.com/icons/svg/1061/1061010.svg');
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+    background-position-x: center;
+    background-position-y: center;
   }
   #plastique{
     background-color: #00b896;
     height: 250px;
+    background-image: url('https://image.flaticon.com/icons/svg/1265/1265024.svg');
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+    background-position-x: center;
+    background-position-y: center;
   }
   #ordinaire {
     background-color: #00b896;
     height: 250px;
+    background-image: url('https://image.flaticon.com/icons/svg/1341/1341939.svg');
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+    background-position-x: center;
+    background-position-y: center;
   }
   #carton {
     background-color: #00b896;
     height: 250px;
+    background-image: url('https://image.flaticon.com/icons/svg/416/416186.svg');
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+    background-position-x: center;
+    background-position-y: center;
   }
   .col-3 {
     background-color: #2a5b74;
@@ -143,8 +193,14 @@ export default Vue.extend({
   h3, h1 {
     background-color: #2a5b74;
     margin-bottom: 0 !important;
-    padding-bottom: 30px;
     padding-top: 30px;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  h3 {
+    margin-bottom: 20px;
   }
   .colonne {
     font-size: 22px;
@@ -160,5 +216,11 @@ export default Vue.extend({
   }
   .container-fluid {
     padding: 0 !important;
+  }
+  .modal-body, .modal-header, .modal-footer {
+    background-color:#2a5b74;
+    font-family:'Cairo';
+    font-size: 20px;
+
   }
 </style>

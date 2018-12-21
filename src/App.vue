@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+@import url('https://fonts.googleapis.com/css?family=Cairo|Open+Sans:600|Poiret+One');;
 #app {
   font-family: 'Poiret One', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
