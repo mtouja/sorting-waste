@@ -143,6 +143,10 @@ export default Vue.extend({
   }
   .modal-header {
     text-align: center !important;
+    border-bottom: transparent !important;
+  }
+  .modal-footer {
+    border-top: transparent !important;
   }
   .waste {
     width: 80px;
@@ -150,6 +154,10 @@ export default Vue.extend({
   }
   #listItem {
     background-color: #2a5b74;
+  }
+  p {
+    font-family: 'Poiret One';
+    font-size: 22px;
   }
   #compost{
     background-color: #00b896;
@@ -177,6 +185,12 @@ export default Vue.extend({
     background-size: 80px 80px;
     background-position-x: center;
     background-position-y: center;
+  }
+  .modal-title  {
+    text-align: center !important;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #e8d93d;
   }
   #carton {
     background-color: #00b896;
