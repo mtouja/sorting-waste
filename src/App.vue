@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-   <!-- <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <Test />
   </div>
 </template>
@@ -20,14 +18,18 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Cairo|Open+Sans:600|Poiret+One');;
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Poiret One', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #121212;
+  color: #FFF;
   margin-top: 60px;
+
 }
 </style>
+
+
 
 
